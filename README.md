@@ -5,8 +5,15 @@ A responsive travel landing page built with **HTML, CSS, and JavaScript**, featu
 ---
 
 ## ✨ Features
-- 🎥 Fullscreen video backgrounds for each city  
-- 🖱️ Smooth slider navigation with animated transitions  
-- 📱 Responsive design with mobile-friendly hamburger menu  
-- 🔗 Social media links for extended engagement  
-- 🎨 Modern UI styled with Google Fonts and Font Awesome icons  
+-  Fullscreen video backgrounds for each city  
+-  Smooth slider navigation with animated transitions  
+-  Responsive design with mobile-friendly hamburger menu  
+-  Social media links for extended engagement  
+-  Modern UI styled with Google Fonts and Font Awesome icons  
+
+---
+
+## To Add
+- Pages for each city/Nav bar buttons
+- Photo gallery
+  
