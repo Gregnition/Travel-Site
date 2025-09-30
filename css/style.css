@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* Header */
+header {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 100px;
+  transition: 0.5s ease;
+}
+
+header .brand {
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header .navigation {
+  position: relative;
+}
+
+header .navigation .navigation-items a {
+  color: #fff;
+  font-size: 1.1em;
+  margin-left: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+header .navigation .navigation-items a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover::before {
+  width: 100%;
+}
+
+/* Section */
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #111;
+  overflow: hidden;
+}
+
+.home:before {
+  z-index: 777;
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Content */
+.home .content {
+  position: absolute;
+  z-index: 888;
+  max-width: 650px;
+  margin-left: 100px;
+  color: #fff;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+  pointer-events: none;
+}
+
+.home .content.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+  pointer-events: auto;
+}
+
+.home .content h1 {
+  font-size: 4em;
+  font-weight: 900;
+  line-height: 1.1em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.home .content h1 span {
+  font-size: 0.6em;
+  font-weight: 400;
+  display: block;
+  margin-top: 10px;
+}
+
+.home .content p {
+  margin-bottom: 40px;
+  line-height: 1.6em;
+  font-weight: 300;
+}
+
+.home .content a {
+  background: #fff;
+  padding: 12px 30px;
+  color: #111;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.home .content a:hover {
+  background: #2696E9;
+  color: #fff;
+}
+
+/* Videos */
+.home video {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: clip-path 2s ease;
+}
+
+/* Media Icons */
+.home .media-icons {
+  z-index: 888;
+  position: absolute;
+  right: 20px;
+  bottom: 50%;
+  transform: translateY(50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.home .media-icons a {
+  color: #fff;
+  font-size: 1.4em;
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+}
+
+.home .media-icons a:hover {
+  transform: scale(1.3);
+}
+
+/* Navigation Dots */
+.slider-navigation {
+  z-index: 889;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-navigation .nav-btn {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active {
+  background: #2696E9;
+}
+
+.slider-navigation .nav-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 1040px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  header .navigation {
+    display: none;
+  }
+
+  header .navigation.active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.7);
+  }
+
+  header .navigation.active .navigation-items {
+    background: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .navigation.active .navigation-items a {
+    color: #111;
+    margin: 20px 0;
+  }
+
+  .menu-btn {
+    background: url("assets/images/menu.png") no-repeat center;
+    background-size: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .menu-btn.active {
+    background: url("assets/images/close.png") no-repeat center;
+    background-size: 25px;
+  }
+
+  .home .content {
+    margin-left: 20px;
+    width: 90%;
+  }
+}
+/* Hamburger button base */
+.menu-btn {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Hamburger lines */
+.menu-btn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Transform into X */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile only */
+@media (max-width: 1040px) {
+  .menu-btn {
+    display: flex; /* show only on smaller screens */
+  }
+
+  header .navigation {
+    display: none;
+  }
+
+  header .navigation.active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.7);
+  }
+
+  header .navigation.active .navigation-items {
+    background: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .navigation.active .navigation-items a {
+    color: #111;
+    margin: 20px 0;
+  }
+}
